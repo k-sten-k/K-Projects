@@ -1,29 +1,32 @@
-# This is UniBuddy - personalised chatbot designed to answer the most common questions new students may have
-# and to help them with transition into university life.
+# This is UniBuddy, a personalized chatbot designed to answer common questions 
+# for new university students and help them transition into university life.
 
-# Defining function to display available questions from the list:
+# Function to display available questions from the list
 def display_available_questions():
-    """Prints a numbered list of available questions for the user to choose from."""
+    """
+    Prints a numbered list of questions for the user to choose from.
+    """
     print("\nHere are the questions I can answer for you:")
     for question_num, question in enumerate(questions_list, start=1):
         print(f"{question_num}. {question}")
 
-# List of questions for user to choose from:
+# List of questions for the user to choose from:
 questions_list = ["How do I find my way around campus?",
-                  "Where can I go if I get sick?",
-                  "Where is the fees office?",
-                  "Where can I get help if I'm struggling in a class?",
-                  "What clubs and societies can I join?"]
-# List of answers corresponding to questions in the list of questions:
-answers_list = ["Use the virtual campus map available on our main website.",
-           "Visit the university health centre located on ground floor in themain building.",
-           "The fees office is located in main building, first floor, room 28.",
-           "Talk to your professor during office hours or to student counsellor.",
-           "Attend the student fair with booths for different clubs and organizations, or check our website for list of univerity's societes."]
+                "Where can I go if I get sick?",
+                "Where is the fees office?",
+                "Where can I get help if I'm struggling in a class?",
+                "What clubs and societies can I join?"]
 
-# Welcoming message and asking general questions about the user and offering personalised replies:
+# List of answers corresponding to the questions in the list
+answers_list = ["Use the virtual campus map available on our main website.",
+            "Visit the university health centre located on ground floor in themain building.",
+            "The fees office is located in main building, first floor, room 28.",
+            "Talk to your professor during office hours or to student counsellor.",
+            "Attend the student fair with booths for different clubs and organizations, or check our website for list of univerity's societes."]
+
+# Welcoming message and personalized replies based on user input:
 print("""\nHello!\nWelcome to university! How exciting! Feeling a bit overwhelmed? Don't worry! I'm here to help :)
-      But first let us learn a bit more about each other. My name is UniBuddy""")
+        But first let us learn a bit more about each other. My name is UniBuddy""")
 name = input("\nWhat's your name? ")
 print(f"Hi {name}, nice to meet you!")
 
@@ -46,12 +49,11 @@ print(f"""\nThank you for all this information {name}. Im confident you can mast
       Save your {superpower} superpower to fight vilains ;)
       \nNow you can ask me some questions. Please select from the list below.""")
 
-# calling function to print list of available questions for user to pick:
+# Display available questions
 display_available_questions()
 
-# While loop to create continious converastion with the user:
+# Continuous conversation loop with error handling
 while True:
-# checking if input is a number within list range, if yes displaying answer, if no: error message
     try:                                                       
         choosen_question = input("Please select your question number or type 'bye' to exit: ")
         if 1 <= int(choosen_question) <= len(questions_list):
@@ -61,7 +63,6 @@ while True:
             raise ValueError("Invalid question number.")
     except ValueError:
         print("\nInvalid input. Please enter a valid question number or 'bye' to exit.")
-# exiting conversation after user types 'bye'
     if choosen_question.lower().strip() == "bye":                           
         print("\nOk, Thank you for chatting with me:) Bye now!!!")
         break
