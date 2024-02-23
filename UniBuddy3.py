@@ -30,14 +30,14 @@ print("""\nHello!\nWelcome to university! How exciting! Feeling a bit overwhelme
 name = input("\nWhat's your name? ")
 print(f"Hi {name}, nice to meet you!")
 
-faculty = (input("\nWhat faculty do you belong to? ")).strip().lower()
-if faculty == "science":
-    print(f"The {faculty} faculty?! No way! I love science experiments!")
+students_faculty = (input("\nWhat faculty do you belong to? ")).strip().lower()
+if students_faculty == "science":
+    print(f"The {students_faculty} faculty?! No way! I love science experiments!")
 else : 
-    print(f"The {faculty} faculty offers great subjects!")
+    print(f"The {students_faculty} faculty offers great subjects!")
 
-major = input("\nWhat are your majors? ")
-print(f"""So yu will study {major}. Good choice! I hope you enjoy it :) \n\nI have one more question for you:""")
+students_major = input("\nWhat are your majors? ")
+print(f"""So yu will study {students_major}. Good choice! I hope you enjoy it :) \n\nI have one more question for you:""")
 
 superpower = (input("\nIf you could have a superpower, what would it be? ")).strip().lower()
 if superpower == "flight":
@@ -45,9 +45,9 @@ if superpower == "flight":
 else:
     print(f"Ah, {superpower}, sounds like a lot of fun!")
 
-print(f"""\nThank you for all this information {name}. Im confident you can master {major} on your own. 
-      Save your {superpower} superpower to fight vilains ;)
-      \nNow you can ask me some questions. Please select from the list below.""")
+print(f"""\nThank you for all this information {name}. Im confident you can master {students_major} on your own. 
+        Save your {superpower} superpower to fight vilains ;)
+        \nNow you can ask me some questions. Please select from the list below.""")
 
 # Display available questions
 display_available_questions()
